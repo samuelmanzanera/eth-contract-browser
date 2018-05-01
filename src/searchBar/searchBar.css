@@ -1,0 +1,31 @@
+.searchBar--container {
+    display: flex;
+    align-items: center;
+    color: rgb(170, 182, 194);
+}
+
+.searchBar--input-container {
+    display: flex;
+    flex-direction: column;
+    border-bottom: thin solid #ccc;
+    padding-bottom: 10px;
+    width: 100%;
+    
+}
+
+.searchBar--input {
+    margin-left: 10px;
+    border: none;
+    background: transparent;
+    color: #4f667d;
+    font-size: 1em;
+    width: 100%;
+}
+
+.searchBar--input::placeholder {
+    color: rgb(170, 182, 194);
+}
+
+.searchBar--input:focus {
+    outline: 0;
+}

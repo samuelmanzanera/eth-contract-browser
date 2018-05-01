@@ -1,0 +1,68 @@
+.player--container {
+  
+}
+
+.player--header {
+    padding: 20px;
+    background: #a4b7ca;
+    color: white;
+}
+
+.player--header-title {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.player--body-title {
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.player--body {
+    
+}
+
+.player--body--header {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.player--body--header a {
+    text-decoration: none;
+    color: #a0b3cc;
+}
+
+.player--body--header a:hover {
+    text-decoration: underline;
+}
+
+
+.player--body--input--container {
+    
+    margin-bottom: 10px;
+    border-bottom: thin solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.player--body--input--container label {
+    color: #999;
+    padding: 5px;
+}
+
+.player--body--input--container input {
+    border: none;
+    background: none;
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+.player--body--input--container input:focus {
+    outline: none;
+    width: 100%;
+}

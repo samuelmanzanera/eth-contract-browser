@@ -1,0 +1,17 @@
+.button {
+    border: none;
+    background: #a4b7ca;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.button:focus {
+    outline: 0;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #c6d7e7;
+}

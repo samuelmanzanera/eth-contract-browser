@@ -1,0 +1,49 @@
+.card--container {
+    width: 300px;
+    background: #fff;
+    margin: 20px;
+    
+    box-shadow: 0px 0px 5px #ddd;
+    border-radius: 5px;
+}
+
+.card--header {
+    border-bottom: thin solid #ddd;
+    padding: 20px;
+    padding-bottom: 5px;
+}
+
+.card--header-title {
+    margin: 0;
+    font-weight: normal;
+    color: #4f667d;
+}
+
+.card--header-subtitle {
+    font-weight: normal;
+    font-size: 0.7em;
+    color: #a0b3cc;
+}
+
+.card--body {
+    padding: 20px;
+    font-size: 0.8em;
+    border-bottom: thin solid #ddd;
+}
+
+.card--footer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.card--header-subtitle a {
+    text-decoration: none;
+    color: #a0b3cc;
+}
+
+.card--header-subtitle a:hover {
+    text-decoration: underline;
+}

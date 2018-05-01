@@ -2,6 +2,7 @@
   "name": "eth-contract-browser",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://samuelmanzanera.github.io",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-solid": "^5.0.10",

@@ -53,8 +53,13 @@ class App extends Component {
       this.props.history.push(currentPath)
     }
     this.setState(prevState => Object.assign(prevState, { searchValue, isLoading: true }), async () => {
-      const results = await axios.get(`https://6otsqko1ue.execute-api.eu-west-3.amazonaws.com/Production?query=${this.state.searchValue}&page=${page}`)
-      this.setState(prevState => Object.assign(prevState, { searchResults: results.data, isLoading: false }))
+      try {
+        const results = await axios.get(`https://6otsqko1ue.execute-api.eu-west-3.amazonaws.com/Production?query=${this.state.searchValue}&page=${page}`)
+        this.setState(prevState => Object.assign(prevState, { searchResults: results.data, isLoading: false }))
+      }
+      catch (e) {
+        this.setState(prevState => Object.assign(prevState, { isLoading: false, error: e.toString() }))
+      }
     })
   }
 
@@ -113,6 +118,9 @@ class App extends Component {
               }
             </div>
           </section>
+        }
+        { !this.state.isLoading && this.state.error && 
+          <p style={{ color: "orangered" }}>{this.state.error}</p>
         }
         <PlayerModal 
           show={this.state.showPlayer} 

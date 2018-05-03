@@ -5,6 +5,8 @@ import spinner from './spinner.svg'
 
 import PlayerFormMember from './playerFormMember'
 
+const API_KEY = "75231VCD2WTEMSQI8QEUEBRN31PCK5KU92"
+
 export default class Player extends React.Component {
 
     constructor (props) {
@@ -21,7 +23,7 @@ export default class Player extends React.Component {
 
     getContractMembers (address) {
         this.setState({ isLoading: true }, async () => {
-            const json = await axios.get(`http://api.etherscan.io/api?module=contract&action=getabi&address=${address}`)
+            const json = await axios.get(`http://api.etherscan.io/api?module=contract&action=getabi&address=${address}&apikey=${API_KEY}`)
             if (json.data.message !== "OK") {
                 this.setState({ isLoading: false, error: json.data.message })
                 return
@@ -56,6 +58,10 @@ export default class Player extends React.Component {
                                 <PlayerFormMember key={index} data={member} contractABI={this.state.contractABI} address={this.props.data.address} />
                             ))}
                         </div>
+                    }
+
+                    { !this.state.isLoading && this.state.error && 
+                        <p style={{ color: "orangered" }}>{this.state.error}</p>
                     }
                 </div>
             </div>

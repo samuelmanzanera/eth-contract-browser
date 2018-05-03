@@ -42,14 +42,15 @@ class App extends Component {
 
 
   search (searchValue = "", page = 0) {
+    let currentPath = this.props.history.location.pathname
     if (searchValue) {
-      this.props.history.push(`/?search=${searchValue}&page=${page}`)
+      this.props.history.push(`${currentPath}?search=${searchValue}&page=${page}`)
     }
     else if (page > 0) {
-      this.props.history.push(`/?page=${page}`)
+      this.props.history.push(`${currentPath}?page=${page}`)
     }
     else if (searchValue === "" && page === 0) {
-      this.props.history.push('/')
+      this.props.history.push(currentPath)
     }
     this.setState(prevState => Object.assign(prevState, { searchValue, isLoading: true }), async () => {
       const results = await axios.get(`https://6otsqko1ue.execute-api.eu-west-3.amazonaws.com/Production?query=${this.state.searchValue}&page=${page}`)

@@ -23,7 +23,7 @@ export default class Player extends React.Component {
 
     getContractMembers (address) {
         this.setState({ isLoading: true }, async () => {
-            const json = await axios.get(`http://api.etherscan.io/api?module=contract&action=getabi&address=${address}&apikey=${API_KEY}`)
+            const json = await axios.get(`https://api.etherscan.io/api?module=contract&action=getabi&address=${address}&apikey=${API_KEY}`)
             if (json.data.message !== "OK") {
                 this.setState({ isLoading: false, error: json.data.message })
                 return
